@@ -4,31 +4,58 @@
 
 <html>
 	<main>
-		<h1>Testing</h1>
+		<h1>Sorta Calc</h1>
+		<div id="calc-container">
+			<div id="num-display"></div>
+			<div id="buttons-pad">
+				<div id="num-pad">
+					<button id="zero">0</button>
+					<button id="one">1</button>
+					<button id="two">2</button>
+					<button id="three">3</button>
+					<button id="four">4</button>
+					<button id="five">5</button>
+					<button id="six">6</button>
+					<button id="seven">7</button>
+					<button id="eight">8</button>
+					<button id="nine">9</button>
+				</div>
+				<div id="calc-pad">
+					<button id="mean">Mean</button>
+					<button id="median">Median</button>
+					<button id="mode">Mode</button>
+					<button id="range">Range</button>
+				</div>
+			</div>
+			
+
+		</div>
+		
 	</main>
 
-
-	<script>
-		function getMean(inputs) {
-			let sum = 0;
-
-			for (const input of inputs) {
-				sum += input;
-			}
-
-			return sum / inputs.length;
-		}
-
-		function getMedian(inputs) {
-
-		}
-
-		function getMode() {
-
-		}
-
-		function getRange() {
-			
-		}
-	</script>
 </html>
+	
+
+<script>
+	function getMean(inputs) {
+		let sum = 0;
+
+		for (const input of inputs) {
+			sum += input;
+		}
+
+		return sum / inputs.length;
+	}
+
+	function getMedian(inputs) {
+
+	}
+
+	function getMode() {
+
+	}
+
+	function getRange() {
+		
+	}
+</script>
