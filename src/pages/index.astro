@@ -6,55 +6,115 @@
 	<main>
 		<h1>Sorta Calc</h1>
 		<div id="calc-container">
-			<div id="num-display"></div>
-			<div id="buttons-pad">
-				<div id="num-pad">
-					<button id="clear-list">CE</button>
-					<button id="clear">C</button>
-					<button id="back">back</button>
-					<button id="add">+</button>
-					<button id="one">1</button>
-					<button id="two">2</button>
-					<button id="three">3</button>
-					<button id="subtract">-</button>
-					<button id="four">4</button>
-					<button id="five">5</button>
-					<button id="six">6</button>
-					<button id="multiply">x</button>
-					<button id="seven">7</button>
-					<button id="eight">8</button>
-					<button id="nine">9</button>
-					<button id="divide">/</button>
-					<button id="decimal">.</button>
-					<button id="zero">0</button>
-					<button id="add-to-list">,</button>
-					<button id="equals">=</button>
-					<button id="mean">Mean</button>
-					<button id="median">Median</button>
-					<button id="mode">Mode</button>
-					<button id="range">Range</button>
-				</div>
+			<input type="text" id="result" />
+			<div id="num-pad">
+				<button id="clear-list">CE</button>
+				<button id="clear">C</button>
+				<button id="back" onkeydown="Backspace">back</button>
+				<button id="add">+</button>
+				<button id="one" value="1">1</button>
+				<button id="two" value="2">2</button>
+				<button id="three" value="3">3</button>
+				<button id="subtract">-</button>
+				<button id="four" value="4">4</button>
+				<button id="five" value="5">5</button>
+				<button id="six" value="6">6</button>
+				<button id="multiply">x</button>
+				<button id="seven" value="7">7</button>
+				<button id="eight" value="8">8</button>
+				<button id="nine" value="9">9</button>
+				<button id="divide">/</button>
+				<button id="decimal">.</button>
+				<button id="zero" value="0">0</button>
+				<button id="add-to-list">,</button>
+				<button id="equals">=</button>
+				<button id="mean">Mean</button>
+				<button id="median">Median</button>
+				<button id="mode">Mode</button>
+				<button id="range">Range</button>
 			</div>
 		</div>
+
+		<style>
+			#num-pad {
+				display: grid;
+				grid-template-columns: repeat(4, auto);
+			}
+			#buttons-pad {
+				max-width: 50%;
+			}
+			#result {
+				border: 1px solid black;
+				width: 50%;
+				height: 30px;
+			}
+		</style>
+
+		<script>
+			// const backspace = document.querySelector('#back');
+			// const one = document.querySelector('#one');
+			// const two = document.querySelector('#two');
+			// const three = document.querySelector('#three');
+			// const four = document.querySelector('#four');
+			// const five = document.querySelector('#five');
+			// const six = document.querySelector('#six');
+			// const seven = document.querySelector('#seven');
+			// const eight = document.querySelector('#eight');
+			// const nine = document.querySelector('#nine');
+			// const zero = document.querySelector('#zero');
+			// const decimal = document.querySelector('#decimal');
+			// const addToList = document.querySelector('#add-to-list');
+			// const equals = document.querySelector('#equals');
+			// const add = document.querySelector('#add');
+			// const subtract = document.querySelector('#subtract');
+			// const multiply = document.querySelector('#multiply');
+			// const divide = document.querySelector('#divide');
+			const result = document.querySelector('#result');
+
+			result.addEventListener("keydown", (e) => e.stopPropagation());
+
+			document.addEventListener("keydown", (e) => {
+				switch (e.key) {
+					case "1":
+						addToResult('1')
+						break;
+					case "2":
+						addToResult('2')
+						break;
+					case "3":
+						addToResult('3')
+						break;
+					case "4":
+						addToResult('4')
+						break;
+					case "5":
+						addToResult('5')
+						break;
+				}
+			});
+			
+			function addToResult(val) {
+				result.value = result.value + val
+			};
+			
+
+			function getMean(inputs) {
+				let sum = 0;
+
+				for (const input of inputs) {
+					sum += input;
+				}
+
+				return sum / inputs.length;
+			}
+
+			function getMedian(inputs) {}
+
+			function getMode() {}
+
+			function getRange() {}
+		</script>
 	</main>
 
 
-
-	<script>
-		function getMean(inputs) {
-			let sum = 0;
-
-			for (const input of inputs) {
-				sum += input;
-			}
-
-			return sum / inputs.length;
-		}
-
-		function getMedian(inputs) {}
-
-		function getMode() {}
-
-		function getRange() {}
-	</script>
 </html>
