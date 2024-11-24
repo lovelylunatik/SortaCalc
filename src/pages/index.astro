@@ -9,56 +9,52 @@
 			<div id="num-display"></div>
 			<div id="buttons-pad">
 				<div id="num-pad">
-					<button id="zero">0</button>
+					<button id="clear-list">CE</button>
+					<button id="clear">C</button>
+					<button id="back">back</button>
+					<button id="add">+</button>
 					<button id="one">1</button>
 					<button id="two">2</button>
 					<button id="three">3</button>
+					<button id="subtract">-</button>
 					<button id="four">4</button>
 					<button id="five">5</button>
 					<button id="six">6</button>
+					<button id="multiply">x</button>
 					<button id="seven">7</button>
 					<button id="eight">8</button>
 					<button id="nine">9</button>
+					<button id="divide">/</button>
+					<button id="decimal">.</button>
+					<button id="zero">0</button>
 					<button id="add-to-list">,</button>
-					<button id="clear">C</button>
-					<button id="clear-list">CE</button>
-				</div>
-				<div id="calc-pad">
+					<button id="equals">=</button>
 					<button id="mean">Mean</button>
 					<button id="median">Median</button>
 					<button id="mode">Mode</button>
 					<button id="range">Range</button>
 				</div>
 			</div>
-			
-
 		</div>
-		
 	</main>
 
-</html>
-	
 
-<script>
-	function getMean(inputs) {
-		let sum = 0;
 
-		for (const input of inputs) {
-			sum += input;
+	<script>
+		function getMean(inputs) {
+			let sum = 0;
+
+			for (const input of inputs) {
+				sum += input;
+			}
+
+			return sum / inputs.length;
 		}
 
-		return sum / inputs.length;
-	}
+		function getMedian(inputs) {}
 
-	function getMedian(inputs) {
+		function getMode() {}
 
-	}
-
-	function getMode() {
-
-	}
-
-	function getRange() {
-		
-	}
-</script>
+		function getRange() {}
+	</script>
+</html>
