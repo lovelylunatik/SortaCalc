@@ -8,26 +8,32 @@
 		<div id="calc-container">
 			<input type="text" id="result" />
 			<div id="num-pad">
+				<!-- Row 1 --> 
 				<button id="clear-list">CE</button>
 				<button id="clear">C</button>
-				<button id="back" onkeydown="Backspace">back</button>
+				<button id="back" onkeydown="Backspace" onclick="backSpace()">back</button>
 				<button id="add">+</button>
+				<!-- Row 2 -->
 				<button id="one" value="1">1</button>
 				<button id="two" value="2">2</button>
 				<button id="three" value="3">3</button>
 				<button id="subtract">-</button>
+				<!-- Row 3 -->
 				<button id="four" value="4">4</button>
 				<button id="five" value="5">5</button>
 				<button id="six" value="6">6</button>
 				<button id="multiply">x</button>
+				<!-- Row 4 -->
 				<button id="seven" value="7">7</button>
 				<button id="eight" value="8">8</button>
 				<button id="nine" value="9">9</button>
 				<button id="divide">/</button>
+				<!-- Row 5 -->
 				<button id="decimal">.</button>
 				<button id="zero" value="0">0</button>
 				<button id="add-to-list">,</button>
 				<button id="equals">=</button>
+				<!-- Row 6: Special Functions -->
 				<button id="mean">Mean</button>
 				<button id="median">Median</button>
 				<button id="mode">Mode</button>
@@ -90,14 +96,45 @@
 					case "5":
 						addToResult('5')
 						break;
+					case "6":
+						addToResult('6')
+						break;
+					case "7":
+						addToResult('7')
+						break;
+					case "8":
+						addToResult('8')
+						break;
+					case "9":
+						addToResult('9')
+						break;
+					case "0":
+						addToResult('0')
+						break;
+					case "Backspace":
+						backSpace()
+						break;
 				}
 			});
 			
 			function addToResult(val) {
 				result.value = result.value + val
 			};
+
+			function backSpace() {
+				result.value = result.value.slice(0, result.value.length -1)
+			}
 			
 
+
+
+
+
+
+
+
+
+			//Special Function Buttons
 			function getMean(inputs) {
 				let sum = 0;
 
